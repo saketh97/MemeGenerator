@@ -1,7 +1,7 @@
 ## MEME Engine Module
 This module fetches an image and adds the quote on that image and stores the new image while returning its path as output
 
-###Dependencies
+### Dependencies
 For successful execution of this module we need certain imports to be done
 1. PIL
 
