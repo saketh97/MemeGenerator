@@ -1,3 +1,4 @@
+"""Main file to run in commandline which returns path as output."""
 import os
 import random
 from MemeGenerator.MemeEngine import ImageCaptioner
@@ -6,7 +7,7 @@ import argparse
 
 
 def generate_meme(path=None, body=None, author=None):
-    """ Generate a meme given an path and a quote """
+    """Generate a meme given an path and a quote."""
     img = None
     quote = None
     if path is None:

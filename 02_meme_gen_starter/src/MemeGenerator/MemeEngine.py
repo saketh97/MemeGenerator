@@ -1,3 +1,4 @@
+"""file to generate meme."""
 from QuoteEngine.QuoteModel import QuoteModel
 from PIL import Image
 from PIL import ImageFont
@@ -7,10 +8,14 @@ import os
 
 
 class ImageCaptioner(object):
+    """class to generate meme."""
+
     def __init__(self, output_dir):
+        """Init method."""
         self.out_path = output_dir
 
     def make_meme(self, image, body, author, width=500) -> str:
+        """Make the meme from image,body and author."""
         try:
             img = Image.open(image)
             aspect_ratio = img.width/img.height

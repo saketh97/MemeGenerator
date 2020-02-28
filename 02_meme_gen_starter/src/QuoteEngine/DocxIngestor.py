@@ -1,3 +1,4 @@
+"""This file parses docx file and returns quotes."""
 from typing import List
 from .QuoteModel import QuoteModel
 from .IngestorInterface import IngestorInterface
@@ -5,10 +6,13 @@ import docx
 
 
 class DocxIngestor(IngestorInterface):
+    """class for docx files inherting IngestorInterface."""
+
     allowed_extensions = ['docx']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse function to parse docx file and return quotes."""
         if not cls.can_ingest(path):
             raise Exception('Ingest error file extension issue.')
         quotes = []
