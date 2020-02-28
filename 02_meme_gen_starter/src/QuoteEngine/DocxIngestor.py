@@ -22,6 +22,5 @@ class DocxIngestor(IngestorInterface):
                     quotes.append(new_quote)
 
         except Exception as e:
-            print('Not able to oepn the file specified')
-
+            return Exception(e)
         return quotes

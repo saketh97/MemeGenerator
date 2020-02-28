@@ -5,7 +5,7 @@ class QuoteModel(object):
         self.author = author
 
     def __repr__(self):
-        if self.body.startswith("\"").endswith("\""):
+        if self.body.startswith("\"") and self.body.endswith("\""):
             return f'{self.body} - {self.author}'
         else:
             return f'"{self.body}" - {self.author}'
