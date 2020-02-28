@@ -1,8 +1,9 @@
 import os
 import random
-from MemeGenerator.MemeEngine import MemeEngine
+from MemeGenerator.MemeEngine import ImageCaptioner
 from QuoteEngine.Ingestor import Ingestor
 import argparse
+
 
 def generate_meme(path=None, body=None, author=None):
     """ Generate a meme given an path and a quote """
@@ -31,15 +32,15 @@ def generate_meme(path=None, body=None, author=None):
         if author is None:
             raise Exception('Author Required if Body is Used')
         quote = QuoteModel(body, author)
-    meme = MemeEngine('./tmp')
+    meme = ImageCaptioner('./static')
     path = meme.make_meme(img, quote.body, quote.author)
     return path
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description = 'gives a meme')
-    parser.add_argument('--path', type=str,help='path to get images')
-    parser.add_argument('--body', type=str,help='body of text to be in meme')
-    parser.add_argument('--author', type=str,help='author of the text')
+    parser = argparse.ArgumentParser(description='gives a meme')
+    parser.add_argument('--path', type=str, help='path to get images')
+    parser.add_argument('--body', type=str, help='body of text to be in meme')
+    parser.add_argument('--author', type=str, help='author of the text')
     args = parser.parse_args()
     print(generate_meme(args.path, args.body, args.author))

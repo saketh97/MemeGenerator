@@ -17,7 +17,6 @@ class PDFIngestor(IngestorInterface):
 
         try:
             tmp = f'./_data/DogQuotes/{random.randint(0, 1000)}.txt'
-            print(tmp)
             call = subprocess.call(['pdftotext', path, tmp])
 
             file_ref = open(tmp, "r")
