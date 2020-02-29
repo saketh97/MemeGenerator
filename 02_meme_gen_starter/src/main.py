@@ -1,5 +1,6 @@
 """Main file to run in commandline which returns path as output."""
 import os
+import glob
 import random
 from MemeGenerator.MemeEngine import ImageCaptioner
 from QuoteEngine.Ingestor import Ingestor
@@ -12,10 +13,7 @@ def generate_meme(path=None, body=None, author=None):
     quote = None
     if path is None:
         images = "./_data/photos/dog/"
-        imgs = []
-        for root, dirs, files in os.walk(images):
-            imgs = [os.path.join(root, name) for name in files]
-
+        imgs =  [img for img in glob.glob(f'{images}/*.jpg')]
         img = random.choice(imgs)
     else:
         img = path[0]

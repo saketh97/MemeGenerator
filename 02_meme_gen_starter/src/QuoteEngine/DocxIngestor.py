@@ -26,5 +26,5 @@ class DocxIngestor(IngestorInterface):
                     quotes.append(new_quote)
 
         except Exception as e:
-            return Exception(e)
+            raise Exception("docx parsing issue occured.")
         return quotes

@@ -9,7 +9,7 @@ import random
 
 class PDFIngestor(IngestorInterface):
     """class for pdf files inherting IngestorInterface."""
-    
+
     allowed_extensions = ['pdf']
 
     @classmethod
@@ -34,5 +34,5 @@ class PDFIngestor(IngestorInterface):
             file_ref.close()
             os.remove(tmp)
         except Exception as e:
-            return Exception(e)
+            raise Exception("pdf parsing issue occured.")
         return quotes

@@ -21,5 +21,5 @@ class CSVIngestor(IngestorInterface):
             for index, rows in csv.iterrows():
                 new_quote = QuoteModel(rows['body'], rows['author'])
         except Exception as e:
-            return Exception(e)
+            raise Exception("CSV parsing issue occured.")
         return quotes

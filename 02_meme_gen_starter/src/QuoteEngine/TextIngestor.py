@@ -26,5 +26,5 @@ class TextIngestor(IngestorInterface):
                     quotes.append(new_quote)
             txt_file.close()
         except Exception as e:
-            return Exception(e)
+            raise Exception("txt parsing issue occured.")
         return quotes

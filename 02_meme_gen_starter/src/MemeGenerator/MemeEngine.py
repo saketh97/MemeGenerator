@@ -1,4 +1,8 @@
-"""file to generate meme."""
+"""
+This is the meme generator module. This module includes a class ImageCaptioner
+that  generates memes wit the image,body and author provided.
+"""
+
 from QuoteEngine.QuoteModel import QuoteModel
 from PIL import Image
 from PIL import ImageFont
@@ -8,7 +12,18 @@ import os
 
 
 class ImageCaptioner(object):
-    """class to generate meme."""
+    """
+    The class ImageCaptioner also contains methods:
+
+        init: saves the output directory specified.
+        make_meme: reads in an image, transforms and adds a caption to the image (body and author)
+
+    Example:
+    meme = MemeEngine("./tmp")
+    output_path = meme.make_meme("path to image", "body of quote", "author of quote")
+
+    The output_path is the that path where the meme is stored.
+    """
 
     def __init__(self, output_dir):
         """Init method."""
